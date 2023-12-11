@@ -2,14 +2,12 @@ import  os
 import  cv2
 import  json
 import  numpy as np
-import  matplotlib.pyplot as plt
-from    scipy.interpolate import interp1d
 
 def draw_lanes_on_image(dataset):
     lanes_x     = dataset["lanes_x"]
     lane_y      = dataset["lane_y"]
     mask        = dataset["mask"]
-    mask        = mask.replace("../../ADS01-Lane-Keeping-Assist-Dataset/masks/", "masks_new/")
+    mask        = mask.replace("../../dataset/datasetv2/trainset/masks", "masks_new")
 
     mask_new    = np.zeros((720, 1280, 3), dtype=np.uint8)
 
